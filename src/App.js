@@ -29,11 +29,14 @@ class App extends Component{
     }
     return (
     <div className="App">
-      {/* <Subject
+      <Subject
       title={this.state.Subject.title}
       sub={this.state.Subject.sub} 
-      /> */}
-      <header>
+      onChangePage={function(){
+        this.setState({mode:'welcome'});
+      }.bind(this)}
+      />
+      {/* <header>
           <h1><a href="/" onClick={function(e){
             console.log(e);
             e.preventDefault();
@@ -42,7 +45,7 @@ class App extends Component{
             });
           }.bind(this)}>{this.state.Subject.title}</a></h1>
           {this.state.Subject.sub}
-      </header>
+      </header> */}
       <TOC data={this.state.contents}/>
       <Content title={_title} desc={_desc}/>
     </div>
