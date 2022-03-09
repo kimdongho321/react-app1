@@ -58,6 +58,6 @@ class App extends Component{
   );
   }
 }
-/*커밋 */
+
 
 export default App;
