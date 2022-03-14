@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import TOC from "./component/TOC"
-import Content from "./component/Content"
+import ReadContent from "./component/ReadContent"
 import Subject from "./component/Subject"
 import Control from "./component/Control"
 import './App.css';
@@ -22,7 +22,8 @@ class App extends Component{
     }
   }
   render(){
-    var _title, _desc = null;
+    var _title, _desc, _article= null;
+    _article = <ReadContent title={_title} desc={_desc} />
     if(this.state.mode === 'welcome'){
       _title = this.state.welcome.title;
       _desc = this.state.welcome.desc;
@@ -37,6 +38,7 @@ class App extends Component{
         }
         i = i + 1;
       }
+     _article = <ReadContent title={_title} desc={_desc} />
     }
     return (
     <div className="App">
@@ -47,13 +49,6 @@ class App extends Component{
         this.setState({mode:'welcome'});
       }.bind(this)}
       />
-
-      <Control onChangeMode={function(_mode){
-        this.setState({
-          mode:_mode
-        })
-      }.bind(this)}/>
-
       <TOC onChangePage={function(id){
         this.setState({
           mode:'read',
@@ -62,7 +57,14 @@ class App extends Component{
       }.bind(this)} 
       data={this.state.contents}
       />
-      <Content title={_title} desc={_desc}/>
+      
+      <Control onChangeMode={function(_mode){
+        this.setState({
+          mode:_mode
+        })
+      }.bind(this)}/>
+
+      {_article}
     </div>
   );
   }
