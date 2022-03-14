@@ -2,7 +2,9 @@ import React, { Component } from 'react';
 import TOC from "./component/TOC"
 import Content from "./component/Content"
 import Subject from "./component/Subject"
+import Control from "./component/Control"
 import './App.css';
+import { __esModule } from '@testing-library/jest-dom/dist/matchers';
 
 class App extends Component{
   constructor(props){
@@ -45,6 +47,13 @@ class App extends Component{
         this.setState({mode:'welcome'});
       }.bind(this)}
       />
+
+      <Control onChangeMode={function(_mode){
+        this.setState({
+          mode:_mode
+        })
+      }.bind(this)}/>
+
       <TOC onChangePage={function(id){
         this.setState({
           mode:'read',
