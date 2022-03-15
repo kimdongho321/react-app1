@@ -6,7 +6,7 @@ class CreateContent extends Component{
         <article>
           <h2>create</h2>
           <form>
-            
+            <p><input type="text" name="title" placeholder="title"></input></p>
           </form>
         </article>
       );

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import TOC from "./component/TOC"
 import ReadContent from "./component/ReadContent"
+import CreateContent from "./component/CreateContent"
 import Subject from "./component/Subject"
 import Control from "./component/Control"
 import './App.css';
@@ -39,6 +40,8 @@ class App extends Component{
         i = i + 1;
       }
      _article = <ReadContent title={_title} desc={_desc} />
+    } else if(this.state.mode === 'create'){
+      _article = <CreateContent />
     }
     return (
     <div className="App">
