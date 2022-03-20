@@ -6,7 +6,7 @@ import Subject from "./component/Subject"
 import Control from "./component/Control"
 import './App.css';
 import { __esModule } from '@testing-library/jest-dom/dist/matchers';
-/*커밋 */
+
 class App extends Component{
   constructor(props){
     super(props);
