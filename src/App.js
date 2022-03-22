@@ -72,7 +72,7 @@ class App extends Component{
   );
   }
 }
-/*커밋하자*/
+
 
 
 export default App;
